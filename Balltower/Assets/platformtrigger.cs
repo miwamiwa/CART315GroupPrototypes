@@ -5,6 +5,8 @@ using UnityEngine;
 public class platformtrigger : MonoBehaviour
 {
     public GameObject targetplatform;
+    public BallSpawner spawner = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,8 @@ public class platformtrigger : MonoBehaviour
             targetplatform
                 .GetComponent<fallingscript>()
                 .falling = true;
-
+                Renderer renderer = GetComponent<Renderer>();
+                spawner.SpawnBalls(renderer.material.color);
         }
     }
 }
