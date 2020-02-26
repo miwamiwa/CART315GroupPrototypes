@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/samscene.unity
+- path: Assets/samprefabs/Scenes/samscene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

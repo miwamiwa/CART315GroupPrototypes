@@ -37,7 +37,7 @@ public class fallingscript : MonoBehaviour
             {
                 Vector3 bounds = gameObject.GetComponent<Collider>().bounds.size;
                 Vector3 pos = GameObject.Find("middlepoint").transform.position;
-                Vector2 randpos = Random.insideUnitCircle * bounds.z*.45f;
+                Vector2 randpos = Random.insideUnitCircle * bounds.z*.3f;
 
                 trig.transform.position = new Vector3(
                     pos.x + randpos.x,

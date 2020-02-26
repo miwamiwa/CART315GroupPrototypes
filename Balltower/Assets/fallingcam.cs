@@ -5,10 +5,13 @@ using UnityEngine;
 public class fallingcam : MonoBehaviour
 {
     public bool falling = false;
+    public GameObject arrow;
+    public GameObject trigger;
     // Start is called before the first frame update
     void Start()
     {
-        
+      //  arrow = GameObject.Find("arrow");
+      //  trigger = GameObject.Find("Trigger");
     }
 
     // Update is called once per frame
@@ -16,6 +19,10 @@ public class fallingcam : MonoBehaviour
     {
         if(falling)
             GameObject.Find("Main Camera").GetComponent<smoothefollow>().movementTime = 0.001f;
+
+
+        arrow.transform.LookAt(
+           trigger.transform, arrow.transform.up);
     }
 
     private void OnCollisionEnter(Collision collision)
