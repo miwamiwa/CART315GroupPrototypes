@@ -6,7 +6,7 @@ public class platformtrigger : MonoBehaviour
 {
     public GameObject targetplatform;
     public BallSpawner spawner = null;
-    public GameObject beam;
+    public GameObject arrow;
 
     float nextTime = 0f;
     public float interval = 8f;
@@ -17,15 +17,15 @@ public class platformtrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        beam = GameObject.Find("arrow");
-        beam.SetActive(false);
+        arrow = GameObject.Find("arrow");
+        arrow.SetActive(false);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        beam.transform.rotation = beamrot;
+        arrow.transform.rotation = beamrot;
 
         if (Time.time > nextTime)
         {
@@ -33,13 +33,13 @@ public class platformtrigger : MonoBehaviour
 
             if (displayed)
             {
-                beam.SetActive(true);
+                arrow.SetActive(true);
                 nextTime = Time.time + displayTime;
             }
             else
             {
                 nextTime = Time.time + interval;
-                beam.SetActive(false);
+                arrow.SetActive(false);
             }
             
         }
