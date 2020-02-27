@@ -59,3 +59,12 @@ sysinfo.txt
 crashlytics-build.properties
 
 *.bin
+Balltower/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+Balltower/Library/ScriptAssemblies/Assembly-CSharp.dll
+Balltower/Library/shadercompiler-UnityShaderCompiler.exe0.log
+Balltower/Library/shadercompiler-UnityShaderCompiler.exe1.log
+Balltower/Library/shadercompiler-UnityShaderCompiler.exe2.log
+Balltower/Library/SourceAssetDB
+Balltower/Library/StateCache/Hierarchy/d2b441-mainStage.json
+Balltower/Library/StateCache/SceneView/331eaf-mainStage.json
+Balltower/obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache
