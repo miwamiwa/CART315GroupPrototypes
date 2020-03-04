@@ -682,7 +682,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14682
+  m_Name: pb_Mesh14728
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4584,6 +4584,12 @@ PrefabInstance:
       propertyPath: trigger
       value: 
       objectReference: {fileID: 791904526}
+    - target: {fileID: 3031417817976614267, guid: 9402a6ddeb383b5438716aa84e635202,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 2585019850183886097, guid: 3d3b2bb785e9ff34ba5e53d423f3551a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9402a6ddeb383b5438716aa84e635202, type: 3}
 --- !u!1001 &5689139019536107634
