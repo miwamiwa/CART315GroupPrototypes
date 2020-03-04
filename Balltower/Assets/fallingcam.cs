@@ -10,6 +10,12 @@ public class fallingcam : MonoBehaviour
     float kickCoolDown = 0;
     public float kickCoolDownDuration = 1f;
     public GameObject projectile;
+    public Animator anim;
+  
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
 
     void Update()
@@ -33,8 +39,11 @@ public class fallingcam : MonoBehaviour
                 Rigidbody rigidbody = newBall.GetComponent<Rigidbody>();
                 rigidbody.velocity = transform.forward * 10f;
                 kickCoolDown = Time.time + kickCoolDownDuration;
+               
+                anim.Play("t-pose");
             }
         }
+       
     }
 
     private void OnCollisionEnter(Collision collision)
