@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class spawnbutton : MonoBehaviour
 {
+
+    float lastSpawn = 0;
+    public float spawnInterval = 4f;
+    public GameObject ball;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +17,19 @@ public class spawnbutton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Time.time > lastSpawn)
+        {
+            GameObject newBall = Instantiate(ball, transform.position + new Vector3(0, 2f, 0), transform.rotation) ;
+            lastSpawn = Time.time + spawnInterval;
+        }
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "ThirdPersonController_LITE")
+        {
+            Destroy(gameObject);
+        }
     }
 }
