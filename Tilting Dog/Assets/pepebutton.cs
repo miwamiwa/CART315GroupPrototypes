@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class pepebutton : MonoBehaviour
 {
-
- 
+    public static int peppeNum;
+    
     // Start is called before the first frame update
     void Start()
     {
-       
+        peppeNum = 0;
     }
 
     // Update is called once per frame
@@ -24,6 +24,7 @@ public class pepebutton : MonoBehaviour
         if (collision.gameObject.name == "ThirdPersonController_LITE")
         {
             Destroy(gameObject);
+            peppeNum++;
         }
     }
 }
