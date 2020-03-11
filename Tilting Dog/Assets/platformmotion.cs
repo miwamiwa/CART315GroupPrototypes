@@ -9,7 +9,7 @@ public class platformmotion : MonoBehaviour
     int frames = 0;
     GameObject target;
     public bool enabled = false;
-    float nextTrigger = 5f;
+    float nextTrigger = 45f;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +46,7 @@ public class platformmotion : MonoBehaviour
         {
             triggered = true;
             GameObject.Find("camTarget").GetComponent<camerafollow>().panOut = true;
-            nextTrigger = Time.time + 20f;
+            nextTrigger = Time.time + 45f;
         }
     }
 

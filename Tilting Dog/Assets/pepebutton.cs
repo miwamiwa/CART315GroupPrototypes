@@ -9,7 +9,7 @@ public class pepebutton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        peppeNum = 0;
+       // peppeNum = 0;
     }
 
     // Update is called once per frame

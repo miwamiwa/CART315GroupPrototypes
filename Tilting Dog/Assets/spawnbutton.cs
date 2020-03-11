@@ -14,7 +14,7 @@ public class spawnbutton : MonoBehaviour
     {
        
         lastSpawn = Random.Range(0, spawnInterval);
-        Debug.Log(lastSpawn);
+        //Debug.Log(lastSpawn);
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class spawnbutton : MonoBehaviour
         if (Time.time > lastSpawn)
         {
             GameObject newBall = Instantiate(ball, transform.position + new Vector3(0, 3f, 0), transform.rotation) ;
-            lastSpawn = Time.time + spawnInterval;
+            lastSpawn = Time.time + Random.Range(0, 6f);
         }
     }
 
