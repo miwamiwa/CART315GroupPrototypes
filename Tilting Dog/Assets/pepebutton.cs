@@ -15,7 +15,7 @@ public class pepebutton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+        if (peppeNum < 0) peppeNum = 0;
     }
 
 
