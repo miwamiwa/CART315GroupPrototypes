@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class camerafollow : MonoBehaviour
 {
-    int doggyDir = -1;
+    public int doggyDir = -1;
     int lastDoggyDir = 1;
     int tick = 0;
     GameObject dog;
@@ -46,6 +46,7 @@ public class camerafollow : MonoBehaviour
                 //  GameObject.Find("Button-emergency").transform.position = new Vector3(0f, -40f, -13f);
                 GameObject.Find("ThirdPersonController_LITE").transform.position = new Vector3(0f, -45f, 8f);
             }
+            
             Rigidbody rb = GameObject.Find("ThirdPersonController_LITE").GetComponent<Rigidbody>();
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
