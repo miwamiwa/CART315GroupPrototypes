@@ -50,7 +50,8 @@ public class buttonspawner : MonoBehaviour
         GameObject[] balls = GameObject.FindGameObjectsWithTag("ball");
         foreach (GameObject thing in balls)
         {
-           //if(Random.Range(0,1f)>0.5f) Destroy(thing);
+            //if(Random.Range(0,1f)>0.5f) Destroy(thing);
+            thing.GetComponent<Rigidbody>().AddForce(new Vector3(0.1f, 0.1f, 0.1f));
         }
     }
 

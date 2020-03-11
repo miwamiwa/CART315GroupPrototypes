@@ -5,19 +5,20 @@ using UnityEngine;
 public class spawnbutton : MonoBehaviour
 {
 
-    float lastSpawn = 0;
-    public float spawnInterval = 4f;
+    private float lastSpawn = 0;
+    float spawnInterval = 4f;
     public GameObject ball;
     float offset = 0;
     // Start is called before the first frame update
-    void Start()
+   private void Start()
     {
-        float offset = Random.Range(0, spawnInterval);
-        lastSpawn = offset;
+       
+        lastSpawn = Random.Range(0, spawnInterval);
+        Debug.Log(lastSpawn);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Time.time > lastSpawn)
         {
