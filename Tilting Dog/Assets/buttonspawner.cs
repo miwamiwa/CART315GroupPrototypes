@@ -47,12 +47,13 @@ public class buttonspawner : MonoBehaviour
         GameObject[] balls = GameObject.FindGameObjectsWithTag("ball");
         foreach (GameObject thing in balls)
         {
-            Destroy(thing);
+           //if(Random.Range(0,1f)>0.5f) Destroy(thing);
         }
     }
 
     public void SpawnButtons(int dir)
     {
+
         for(int i=0; i<buttonsAmount; i++)
         {
             Vector3 position;
@@ -68,5 +69,7 @@ public class buttonspawner : MonoBehaviour
             }
             Instantiate(button, position, Quaternion.identity);
         }
+
+        buttonsAmount+=3;
     }
 }

@@ -893,9 +893,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c22b257ba849b40aa29d47754bf581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonsAmount: 10
+  buttonsAmount: 24
   button: {fileID: 1940246887528014129, guid: 7ee06e6a2c4a97a439104e9ca9a13f63, type: 3}
-  xrange: 5
+  xrange: 7.43
   minfact: 0.1
   maxfact: 0.63
 --- !u!4 &1658008558

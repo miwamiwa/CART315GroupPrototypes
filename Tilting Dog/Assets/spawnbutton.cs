@@ -13,15 +13,16 @@ public class spawnbutton : MonoBehaviour
     void Start()
     {
         float offset = Random.Range(0, spawnInterval);
+        lastSpawn = offset;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > lastSpawn + offset)
+        if (Time.time > lastSpawn)
         {
             GameObject newBall = Instantiate(ball, transform.position + new Vector3(0, 2f, 0), transform.rotation) ;
-            lastSpawn = Time.time + spawnInterval - offset;
+            lastSpawn = Time.time + spawnInterval;
         }
     }
 
