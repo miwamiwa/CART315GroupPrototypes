@@ -26,6 +26,8 @@ public class camerafollow : MonoBehaviour
         
         if (doggyDir != lastDoggyDir)
         {
+            GameObject.Find("spawner").GetComponent<buttonspawner>().DestroyButtons();
+            GameObject.Find("spawner").GetComponent<buttonspawner>().SpawnButtons(doggyDir);
             transform.eulerAngles = new Vector3(
               transform.eulerAngles.x,
               transform.eulerAngles.y + 180,

@@ -8,19 +8,20 @@ public class spawnbutton : MonoBehaviour
     float lastSpawn = 0;
     public float spawnInterval = 4f;
     public GameObject ball;
+    float offset = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        float offset = Random.Range(0, spawnInterval);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > lastSpawn)
+        if (Time.time > lastSpawn + offset)
         {
             GameObject newBall = Instantiate(ball, transform.position + new Vector3(0, 2f, 0), transform.rotation) ;
-            lastSpawn = Time.time + spawnInterval;
+            lastSpawn = Time.time + spawnInterval - offset;
         }
     }
 

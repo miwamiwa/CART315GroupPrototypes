@@ -38,11 +38,13 @@ public class platformmotion : MonoBehaviour
                 {
                     GameObject.Find("Button-emergency").transform.position = new Vector3(0f, -65f, -21f);
                     GameObject.Find("Button-emergency (1)").transform.position = new Vector3(0f, -51f, -2f);
+                    GameObject.Find("ThirdPersonController_LITE").transform.position = new Vector3(0f, -65f, -21f);
                 }
                 else
                 {
                     GameObject.Find("Button-emergency").transform.position = new Vector3(0f, -40f, -13f);
-                    GameObject.Find("Button-emergency (1)").transform.position = new Vector3(0f, -48f, -9f);
+                    GameObject.Find("Button-emergency (1)").transform.position = new Vector3(0f, -48f, 8f);
+                    GameObject.Find("ThirdPersonController_LITE").transform.position = new Vector3(0f, -48f, 8f);
                 }
             }
         }
