@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 1940246887528014133}
   - component: {fileID: 1940246887528014132}
   - component: {fileID: 1940246887528014130}
-  - component: {fileID: 1940246887528014135}
-  - component: {fileID: 1940246887528014131}
   m_Layer: 0
   m_Name: spawnbutton
   m_TagString: spawnbutton
@@ -96,32 +94,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnInterval: 10
   ball: {fileID: 7024222551439811675, guid: e8bff2c14569e13468ff923e792d94a5, type: 3}
---- !u!54 &1940246887528014135
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940246887528014129}
-  serializedVersion: 2
-  m_Mass: 71.35
-  m_Drag: 10
-  m_AngularDrag: 10
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &1940246887528014131
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940246887528014129}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.163445, y: 2, z: 0.33876932}
-  m_Center: {x: -0.26840615, y: 0.000000542807, z: -0.33061454}

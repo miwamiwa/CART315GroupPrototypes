@@ -25,7 +25,7 @@ public class platformmotion : MonoBehaviour
         {
 
             Debug.Log("triggered");
-            target.transform.Rotate(0.0007f*dir*frames,0,0);
+            target.transform.Rotate(0.0005f*dir*frames,0,0);
             frames+=1;
             if(frames>400)
             {

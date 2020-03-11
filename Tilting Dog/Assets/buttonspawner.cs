@@ -56,26 +56,25 @@ public class buttonspawner : MonoBehaviour
 
     public void SpawnButtons(int dir)
     {
+        for(int i=0; i<8; i++)
+        {
+            Vector3 position2;
+            if (dir == 1) position2 = new Vector3(-xrange + i*2*xrange/8, -50f, 0f); 
+            else position2 = new Vector3(-xrange + i * 2 * xrange / 8, -38f, -15f);
+            
+            Instantiate(button, position2, Quaternion.identity);
+        }
 
         for(int i=0; i<buttonsAmount; i++)
         {
             Vector3 position;
-            Vector3 position2;
+            
             float fact = Random.Range(minfact, maxfact);
-            float fact2 = Random.Range(minfact2, maxfact2);
 
-            if (dir == 1)
-            {
-                position = new Vector3(Random.Range(-xrange, xrange), -51f - fact * (14f) + 2f, -2f - fact * 19f);
-                position2 = new Vector3(Random.Range(-xrange, xrange), -50f, 0f);
-            } 
-            else
-            {
-                position = new Vector3(Random.Range(-xrange, xrange), -40f - fact * 8f + 2f, -13f + fact * 21f);
-                position2 = new Vector3(Random.Range(-xrange, xrange), -38f, -15f);
-            }
+            if (dir == 1) position = new Vector3(Random.Range(-xrange, xrange), -51f - fact * (14f) + 2f, -2f - fact * 19f);
+            else position = new Vector3(Random.Range(-xrange, xrange), -40f - fact * 8f + 2f, -13f + fact * 21f);
+            
             Instantiate(pepe, position, Quaternion.identity);
-            Instantiate(button, position2, Quaternion.identity);
 
         }
 

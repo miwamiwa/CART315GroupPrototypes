@@ -38,13 +38,13 @@ public class camerafollow : MonoBehaviour
             {
                 //  GameObject.Find("Button-emergency").transform.position = new Vector3(0f, -65f, -21f);
                 
-                GameObject.Find("ThirdPersonController_LITE").transform.position = new Vector3(0f, -64f, -21f);
+                GameObject.Find("ThirdPersonController_LITE").transform.position = new Vector3(0f, -60f, -21f);
 
             }
             else
             {
                 //  GameObject.Find("Button-emergency").transform.position = new Vector3(0f, -40f, -13f);
-                GameObject.Find("ThirdPersonController_LITE").transform.position = new Vector3(0f, -47f, 8f);
+                GameObject.Find("ThirdPersonController_LITE").transform.position = new Vector3(0f, -45f, 8f);
             }
             Rigidbody rb = GameObject.Find("ThirdPersonController_LITE").GetComponent<Rigidbody>();
             rb.velocity = Vector3.zero;
