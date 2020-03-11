@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940246887528014129}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 80ae7675bc6289245a5f7005b25d51b7, type: 2}
+  - {fileID: 2100000, guid: 1694f6fdbee08854cb5c740f2377a698, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e89eb581fb78724683c1c05f1946e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnInterval: 2.68
+  spawnInterval: 10
   ball: {fileID: 7024222551439811675, guid: e8bff2c14569e13468ff923e792d94a5, type: 3}
 --- !u!54 &1940246887528014135
 Rigidbody:
@@ -123,5 +123,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Size: {x: 0.163445, y: 2, z: 0.33876932}
+  m_Center: {x: -0.26840615, y: 0.000000542807, z: -0.33061454}

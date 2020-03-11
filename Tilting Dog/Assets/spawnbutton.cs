@@ -21,17 +21,10 @@ public class spawnbutton : MonoBehaviour
     {
         if (Time.time > lastSpawn)
         {
-            GameObject newBall = Instantiate(ball, transform.position + new Vector3(0, 2f, 0), transform.rotation) ;
+            GameObject newBall = Instantiate(ball, transform.position + new Vector3(0, 3f, 0), transform.rotation) ;
             lastSpawn = Time.time + spawnInterval;
         }
     }
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "ThirdPersonController_LITE")
-        {
-            Destroy(gameObject);
-        }
-    }
 }

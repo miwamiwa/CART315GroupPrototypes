@@ -33,11 +33,27 @@ public class camerafollow : MonoBehaviour
               transform.eulerAngles.y + 180,
               transform.eulerAngles.z
         );
+
+            if (doggyDir == 1)
+            {
+                //  GameObject.Find("Button-emergency").transform.position = new Vector3(0f, -65f, -21f);
+                
+                GameObject.Find("ThirdPersonController_LITE").transform.position = new Vector3(0f, -64f, -21f);
+
+            }
+            else
+            {
+                //  GameObject.Find("Button-emergency").transform.position = new Vector3(0f, -40f, -13f);
+                GameObject.Find("ThirdPersonController_LITE").transform.position = new Vector3(0f, -47f, 8f);
+            }
+            Rigidbody rb = GameObject.Find("ThirdPersonController_LITE").GetComponent<Rigidbody>();
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
         }
 
         lastDoggyDir = doggyDir;
 
-
+        
         if (panOut && !prevPanOut)
         {
             displacement = 0f;
@@ -67,7 +83,7 @@ public class camerafollow : MonoBehaviour
                 }
                 else
                 {
-                    GameObject.Find("Button-emergency").GetComponent<platformmotion>().enabled = true;
+                   // GameObject.Find("Button-emergency").GetComponent<platformmotion>().enabled = true;
                     GameObject.Find("Button-emergency (1)").GetComponent<platformmotion>().enabled = true;
                 }
                 

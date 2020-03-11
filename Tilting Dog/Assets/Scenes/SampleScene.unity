@@ -150,6 +150,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7217828390678641911, guid: 47f46a45638472a489e43bdd5a557df8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 47f46a45638472a489e43bdd5a557df8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -220,10 +225,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.25226977
       objectReference: {fileID: 0}
+    - target: {fileID: -1303533798577211092, guid: 47f46a45638472a489e43bdd5a557df8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 47f46a45638472a489e43bdd5a557df8,
         type: 3}
       propertyPath: m_Name
       value: Button-emergency (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 47f46a45638472a489e43bdd5a557df8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47f46a45638472a489e43bdd5a557df8, type: 3}
@@ -309,6 +324,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button-emergency
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 47f46a45638472a489e43bdd5a557df8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47f46a45638472a489e43bdd5a557df8, type: 3}
 --- !u!1 &403701702 stripped
@@ -346,20 +366,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &403701706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403701702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef429ef96b31266478dd4aa05dc4add2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dir: 1
-  enabled: 0
 --- !u!1001 &507077399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -800,7 +806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef429ef96b31266478dd4aa05dc4add2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dir: -1
   enabled: 0
 --- !u!65 &1361780595
 BoxCollider:
@@ -895,9 +900,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonsAmount: 24
   button: {fileID: 1940246887528014129, guid: 7ee06e6a2c4a97a439104e9ca9a13f63, type: 3}
+  pepe: {fileID: 1940246887528014129, guid: e28149b867693fb4e823f234dafe0349, type: 3}
   xrange: 7.43
   minfact: 0.1
   maxfact: 0.63
+  minfact2: 1
+  maxfact2: 1.1
 --- !u!4 &1658008558
 Transform:
   m_ObjectHideFlags: 0

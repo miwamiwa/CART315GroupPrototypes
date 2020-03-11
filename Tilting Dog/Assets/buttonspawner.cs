@@ -6,9 +6,12 @@ public class buttonspawner : MonoBehaviour
 {
     public int buttonsAmount = 10;
     public GameObject button;
+    public GameObject pepe;
     public float xrange = 5f;
     public float minfact = 0f;
     public float maxfact = 1f;
+    public float minfact2 = 1f;
+    public float maxfact2 = 1.1f;
 
     /*
      * 
@@ -57,17 +60,23 @@ public class buttonspawner : MonoBehaviour
         for(int i=0; i<buttonsAmount; i++)
         {
             Vector3 position;
-            float fact = Random.Range(minfact,maxfact);
-            
+            Vector3 position2;
+            float fact = Random.Range(minfact, maxfact);
+            float fact2 = Random.Range(minfact2, maxfact2);
+
             if (dir == 1)
             {
                 position = new Vector3(Random.Range(-xrange, xrange), -51f - fact * (14f) + 2f, -2f - fact * 19f);
+                position2 = new Vector3(Random.Range(-xrange, xrange), -50f, 0f);
             } 
             else
             {
                 position = new Vector3(Random.Range(-xrange, xrange), -40f - fact * 8f + 2f, -13f + fact * 21f);
+                position2 = new Vector3(Random.Range(-xrange, xrange), -38f, -15f);
             }
-            Instantiate(button, position, Quaternion.identity);
+            Instantiate(pepe, position, Quaternion.identity);
+            Instantiate(button, position2, Quaternion.identity);
+
         }
 
         buttonsAmount+=3;
