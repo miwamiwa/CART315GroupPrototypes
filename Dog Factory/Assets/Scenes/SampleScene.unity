@@ -256,7 +256,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14296
+  m_Name: pb_Mesh14304
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -419,7 +419,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14324
+  m_Name: pb_Mesh14366
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4374,7 +4374,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-8220
+  m_Name: pb_Mesh14332
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7831,7 +7831,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-35834
+  m_Name: pb_Mesh14380
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7994,7 +7994,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14336
+  m_Name: pb_Mesh14410
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8426,7 +8426,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-35692
+  m_Name: pb_Mesh14394
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9131,12 +9131,17 @@ PrefabInstance:
     - target: {fileID: 4425428723088313502, guid: fc9b148a2950aaf4cba8422632222c5d,
         type: 3}
       propertyPath: horizontalInput
-      value: Horizontal
+      value: Horizontal 2
       objectReference: {fileID: 0}
     - target: {fileID: 4425428723088313502, guid: fc9b148a2950aaf4cba8422632222c5d,
         type: 3}
       propertyPath: verticallInput
-      value: Vertical
+      value: Vertical 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425428723088313502, guid: fc9b148a2950aaf4cba8422632222c5d,
+        type: 3}
+      propertyPath: jumpInput
+      value: 303
       objectReference: {fileID: 0}
     - target: {fileID: 4425428723088313503, guid: fc9b148a2950aaf4cba8422632222c5d,
         type: 3}
@@ -15967,7 +15972,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-7828
+  m_Name: pb_Mesh14316
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
