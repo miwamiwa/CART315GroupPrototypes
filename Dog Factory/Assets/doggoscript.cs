@@ -8,6 +8,8 @@ public class doggoscript : MonoBehaviour
     string state = "idle";
     int timer = 0;
 
+    public float chargeSpeed = 0.5f;
+
     GameObject targetBall;
     Vector3 chargeDir;
     // Start is called before the first frame update
@@ -59,7 +61,7 @@ public class doggoscript : MonoBehaviour
             case "charge":
 
 
-                transform.position += chargeDir.normalized * 1f;
+                transform.position += chargeDir.normalized * chargeSpeed;
 
                 break;
         }
@@ -73,5 +75,22 @@ public class doggoscript : MonoBehaviour
         Debug.Log(newstate);
         state = newstate;
         timer = 0;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (state == "charge")
+        {
+            if (collision.gameObject.tag == "Ball")
+            {
+                switchState("idle");
+            }
+
+            if (collision.gameObject.tag == "Wall")
+            {
+                switchState("idle");
+            }
+        }
+        
     }
 }
