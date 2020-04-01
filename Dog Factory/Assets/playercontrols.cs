@@ -23,7 +23,7 @@ public class playercontrols : MonoBehaviour
             {
 
                 float distance = 2f;
-                Vector3 spawnpos = transform.forward * distance + transform.position;
+                Vector3 spawnpos = transform.forward * distance + transform.position + new Vector3(0f,1f,0f);
 
                 GameObject newBall = Instantiate(projectile, spawnpos, transform.rotation);
                 Rigidbody rigidbody = newBall.GetComponent<Rigidbody>();

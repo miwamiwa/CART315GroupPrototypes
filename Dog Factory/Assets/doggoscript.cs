@@ -8,14 +8,18 @@ public class doggoscript : MonoBehaviour
     string state = "idle";
     int timer = 0;
 
-    public float chargeSpeed = 0.1f;
+    float chargeSpeed = 0.1f;
+    int blindEye = -1;
 
     GameObject targetBall;
     Vector3 chargeDir;
+    Vector3 strayDir;
+    GameObject[] balls;
     // Start is called before the first frame update
     void Start()
     {
-        
+         balls = GameObject.FindGameObjectsWithTag("Ball");
+
     }
 
     // Update is called once per frame
@@ -27,7 +31,7 @@ public class doggoscript : MonoBehaviour
         {
             case "idle":
 
-                GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+                
                 bool[] inRange = new bool[balls.Length];
                 int inRangeCount = 0;
 
@@ -39,8 +43,12 @@ public class doggoscript : MonoBehaviour
 
                     if (dist.magnitude < 10)
                     {
-                        inRange[i] = true;
-                        inRangeCount++;
+                        if (i != blindEye || balls[i].GetComponent<Rigidbody>().velocity.magnitude > 1f)
+                        {
+                            inRange[i] = true;
+                            inRangeCount++;
+                        }
+                        
                     }
                     else inRange[i] = false;
                 }
@@ -48,6 +56,7 @@ public class doggoscript : MonoBehaviour
                 if (inRangeCount > 0)
                 {
                     int randomPick = Random.Range(0, inRangeCount);
+                    blindEye = randomPick;
                     targetBall = balls[randomPick];
                     chargeDir = targetBall.transform.position - transform.position;
                     chargeDir = new Vector3(chargeDir.x,0,chargeDir.z);
@@ -70,6 +79,17 @@ public class doggoscript : MonoBehaviour
                 transform.position += chargeDir.normalized * chargeSpeed;
 
                 break;
+
+            case "wait":
+
+                if (timer > 100) switchState("idle");
+                break;
+
+            case "stray":
+
+                transform.position += strayDir * 0.01f;
+                if (timer > 100) switchState("wait");
+                break;
         }
         
 
@@ -83,20 +103,24 @@ public class doggoscript : MonoBehaviour
         timer = 0;
     }
 
-    private void OnCollisionEnter(Collision collision)
+ 
+
+    private void OnCollisionStay(Collision collision)
     {
-        if (state == "charge")
+        if (state == "charge" || state == "stray")
         {
             if (collision.gameObject.tag == "Ball")
             {
-                switchState("idle");
+                switchState("wait");
             }
 
             if (collision.gameObject.tag == "Wall")
             {
-                switchState("idle");
+                switchState("stray");
+                blindEye = -1;
+                strayDir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f);
             }
         }
-        
+
     }
 }
