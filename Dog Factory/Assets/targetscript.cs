@@ -28,6 +28,7 @@ public class targetscript : MonoBehaviour
             if (collision.gameObject.GetComponent<Renderer>().material==mat1)
             {
                 Debug.Log("yo");
+                Destroy(collision.gameObject);
             }
         }
     }
