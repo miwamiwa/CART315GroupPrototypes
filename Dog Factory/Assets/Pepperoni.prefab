@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6366674741613574592}
   - component: {fileID: -780672966153211928}
   - component: {fileID: 3857538666879441983}
+  - component: {fileID: 3182416340606058444}
   m_Layer: 0
   m_Name: Pepperoni
   m_TagString: Peppe
@@ -110,3 +111,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.9999999, z: 1}
   m_Center: {x: 0.00000005960464, y: 0, z: -0.00000008940696}
+--- !u!114 &3182416340606058444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6366674741613574606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b49134db567874bb004f9229911830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
