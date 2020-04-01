@@ -193,10 +193,7 @@ public class doggoscript : MonoBehaviour
         }
 
         if (collision.gameObject.tag == "player") blindEye = -1;
-        if( collision.gameObject == targetObject)
-        {
-            Destroy(gameObject);
-        }
+        
 
     }
 }
