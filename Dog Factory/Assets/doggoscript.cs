@@ -12,13 +12,18 @@ public class doggoscript : MonoBehaviour
     int blindEye = -1;
 
     GameObject targetBall;
+    GameObject targetPeppe;
     Vector3 chargeDir;
     Vector3 strayDir;
     GameObject[] balls;
+    Vector3 center;
+
+    public GameObject targetObject;
     // Start is called before the first frame update
     void Start()
     {
          balls = GameObject.FindGameObjectsWithTag("Ball");
+        center = GameObject.Find("center").transform.position;
 
     }
 
@@ -31,38 +36,94 @@ public class doggoscript : MonoBehaviour
         {
             case "idle":
 
-                
-                bool[] inRange = new bool[balls.Length];
+                GameObject[] pepperonis = GameObject.FindGameObjectsWithTag("Peppe");
+                int peppeInRangeCount = 0;
+                bool[] ballInRange = new bool[balls.Length];
+                bool[] peppeInRange = new bool[pepperonis.Length];
                 int inRangeCount = 0;
 
-                for (int i = 0; i < balls.Length; i++)
+                for (int i = 0; i < pepperonis.Length; i++)
                 {
-                    Vector3 ballPos = balls[i].transform.position;
-                    Vector3 dist = currentPos - ballPos;
-
+                    Vector3 peppePos = balls[i].transform.position;
+                    Vector3 dist = currentPos - peppePos;
+                    Debug.Log(dist.magnitude);
 
                     if (dist.magnitude < 10)
                     {
-                        if (i != blindEye || balls[i].GetComponent<Rigidbody>().velocity.magnitude > 1f)
-                        {
-                            inRange[i] = true;
-                            inRangeCount++;
-                        }
-                        
+                        peppeInRange[i] = true;
+                            peppeInRangeCount++;
                     }
-                    else inRange[i] = false;
+                    else peppeInRange[i] = false;
                 }
 
-                if (inRangeCount > 0)
+                if (peppeInRangeCount > 0)
                 {
-                    int randomPick = Random.Range(0, inRangeCount);
-                    blindEye = randomPick;
-                    targetBall = balls[randomPick];
-                    chargeDir = targetBall.transform.position - transform.position;
-                    chargeDir = new Vector3(chargeDir.x,0,chargeDir.z);
-                    switchState("getready");
+                    Debug.Log(peppeInRangeCount);
+                        int randomPick = Random.Range(0, peppeInRangeCount);
+                    Debug.Log(randomPick);
+                       // blindEye = randomPick;
+
+                        int count = 0;
+
+                        for (int i = 0; i < pepperonis.Length; i++)
+                        {
+                            if (peppeInRange[i])
+                            {
+                                if (count == randomPick) targetPeppe = pepperonis[i];
+                                count++;
+                            }
+                        }
+                    Debug.Log(targetPeppe.transform.position);
+                        // targetBall = balls[randomPick];
+                        chargeDir = targetPeppe.transform.position - transform.position;
+                        chargeDir = new Vector3(chargeDir.x, 0, chargeDir.z);
+                    transform.LookAt(targetPeppe.transform.position, Vector3.up);
+                    switchState("charge");
+                    
                 }
-                
+                else
+                {
+
+                    for (int i = 0; i < balls.Length; i++)
+                    {
+                        Vector3 ballPos = balls[i].transform.position;
+                        Vector3 dist = currentPos - ballPos;
+
+
+                        if (dist.magnitude < 20)
+                        {
+                            if (i != blindEye || balls[i].GetComponent<Rigidbody>().velocity.magnitude > 1f)
+                            {
+                                ballInRange[i] = true;
+                                inRangeCount++;
+                            }
+
+                        }
+                        else ballInRange[i] = false;
+                    }
+
+                    if (inRangeCount > 0)
+                    {
+                        int randomPick = Random.Range(0, inRangeCount);
+                        blindEye = randomPick;
+
+                        int count = 0;
+
+                        for (int i = 0; i < balls.Length; i++)
+                        {
+                            if (ballInRange[i])
+                            {
+                                if (count == randomPick) targetBall = balls[i];
+                                count++;
+                            }
+                        }
+                        // targetBall = balls[randomPick];
+                        chargeDir = targetBall.transform.position - transform.position;
+                        chargeDir = new Vector3(chargeDir.x, 0, chargeDir.z);
+                        switchState("getready");
+                    }
+                }
+
 
                 break;
 
@@ -87,7 +148,7 @@ public class doggoscript : MonoBehaviour
 
             case "stray":
 
-                transform.position += strayDir * 0.01f;
+                transform.position += strayDir.normalized * 0.01f;
                 if (timer > 100) switchState("wait");
                 break;
         }
@@ -114,12 +175,27 @@ public class doggoscript : MonoBehaviour
                 switchState("wait");
             }
 
+            if (collision.gameObject.tag == "Peppe")
+            {
+                Destroy(collision.gameObject);
+                switchState("wait");
+            }
+
             if (collision.gameObject.tag == "Wall")
             {
                 switchState("stray");
                 blindEye = -1;
-                strayDir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f);
+
+                strayDir = center - transform.position;
+                strayDir = new Vector3(strayDir.x, 0, strayDir.z);
+               // strayDir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f);
             }
+        }
+
+        if (collision.gameObject.tag == "player") blindEye = -1;
+        if( collision.gameObject == targetObject)
+        {
+            Destroy(gameObject);
         }
 
     }

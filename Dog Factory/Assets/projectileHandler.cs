@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class projectileHandler : MonoBehaviour
 {
+    int timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,11 +14,11 @@ public class projectileHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (timer > 10)
+        {
+            Destroy(gameObject);
+        }
+        timer++;
     }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        Destroy(gameObject);
-    }
 }

@@ -6,7 +6,7 @@ public class playercontrols : MonoBehaviour
 {
     public GameObject projectile;
     float kickCoolDown = 0;
-    float kickCoolDownDuration = 0.5f;
+    float kickCoolDownDuration = 0.1f;
     Animator anim;
     // Start is called before the first frame update
     void Start()
@@ -22,8 +22,8 @@ public class playercontrols : MonoBehaviour
             if (Time.time > kickCoolDown)
             {
 
-                float distance = 2f;
-                Vector3 spawnpos = transform.forward * distance + transform.position + new Vector3(0f,1f,0f);
+                float distance = 1.7f;
+                Vector3 spawnpos = transform.forward * distance + transform.position + new Vector3(0f,2f,0f);
 
                 GameObject newBall = Instantiate(projectile, spawnpos, transform.rotation);
                 Rigidbody rigidbody = newBall.GetComponent<Rigidbody>();
