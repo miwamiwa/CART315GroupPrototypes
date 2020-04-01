@@ -25,6 +25,7 @@ public class targetscript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Dog")
         {
+            Debug.Log("dog");
             if (collision.gameObject.GetComponent<Renderer>().material==mat1)
             {
                 Debug.Log("yo");
