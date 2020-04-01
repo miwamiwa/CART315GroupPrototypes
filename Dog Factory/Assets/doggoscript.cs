@@ -44,9 +44,9 @@ public class doggoscript : MonoBehaviour
 
                 for (int i = 0; i < pepperonis.Length; i++)
                 {
-                    Vector3 peppePos = balls[i].transform.position;
+                    Vector3 peppePos = pepperonis[i].transform.position;
                     Vector3 dist = currentPos - peppePos;
-                    Debug.Log(dist.magnitude);
+                  //  Debug.Log(dist.magnitude);
 
                     if (dist.magnitude < 10)
                     {
@@ -58,9 +58,9 @@ public class doggoscript : MonoBehaviour
 
                 if (peppeInRangeCount > 0)
                 {
-                    Debug.Log(peppeInRangeCount);
+                   // Debug.Log(peppeInRangeCount);
                         int randomPick = Random.Range(0, peppeInRangeCount);
-                    Debug.Log(randomPick);
+                  //  Debug.Log(randomPick);
                        // blindEye = randomPick;
 
                         int count = 0;
@@ -73,7 +73,7 @@ public class doggoscript : MonoBehaviour
                                 count++;
                             }
                         }
-                    Debug.Log(targetPeppe.transform.position);
+                 //   Debug.Log(targetPeppe.transform.position);
                         // targetBall = balls[randomPick];
                         chargeDir = targetPeppe.transform.position - transform.position;
                         chargeDir = new Vector3(chargeDir.x, 0, chargeDir.z);
@@ -159,7 +159,7 @@ public class doggoscript : MonoBehaviour
 
     void switchState(string newstate)
     {
-        Debug.Log(newstate);
+       // Debug.Log(newstate);
         state = newstate;
         timer = 0;
     }
