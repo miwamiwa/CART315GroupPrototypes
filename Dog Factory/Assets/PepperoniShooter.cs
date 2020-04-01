@@ -7,9 +7,10 @@ public class PepperoniShooter : MonoBehaviour
     public GameObject pepperonis;
     public GameObject spawn;
     public Vector3 directionVector;
-    public float spawnRate;
     public float minVelocity;
     public float maxVelocity;
+    public float minTime;
+    public float maxTime;
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class PepperoniShooter : MonoBehaviour
             float randomVelocity = Random.Range(minVelocity, maxVelocity);
             rb.velocity = directionVector * randomVelocity;
 
-            yield return new WaitForSeconds(spawnRate);
+            yield return new WaitForSeconds(Random.Range(minTime,maxTime));
         }
     }
 }

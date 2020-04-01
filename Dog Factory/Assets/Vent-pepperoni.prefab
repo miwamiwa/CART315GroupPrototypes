@@ -3342,6 +3342,7 @@ MonoBehaviour:
     type: 3}
   spawn: {fileID: 3297630694317711311}
   directionVector: {x: 0, y: 0, z: -1}
-  spawnRate: 2
   minVelocity: 5
   maxVelocity: 20
+  minTime: 2
+  maxTime: 5

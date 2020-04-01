@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 82280535872663712}
   - component: {fileID: 82280535872663714}
   m_Layer: 0
-  m_Name: Button-emergency (4)
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,3 +239,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationController: {fileID: 82280535872663712}
+  dogs: {fileID: 6009282296622506923, guid: 4da5a2732799afa4c9641fed3081208d, type: 3}
+  spawnDog1: {fileID: 0}
+  spawnDog2: {fileID: 0}
+  spawnDog3: {fileID: 0}
+  spawnDog4: {fileID: 0}
+  spawnDog5: {fileID: 0}
+  dogSpeed: 5
