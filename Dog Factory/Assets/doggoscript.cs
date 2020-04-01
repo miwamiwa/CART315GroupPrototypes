@@ -8,7 +8,7 @@ public class doggoscript : MonoBehaviour
     string state = "idle";
     int timer = 0;
 
-    public float chargeSpeed = 0.5f;
+    public float chargeSpeed = 0.1f;
 
     GameObject targetBall;
     Vector3 chargeDir;
@@ -50,13 +50,19 @@ public class doggoscript : MonoBehaviour
                     int randomPick = Random.Range(0, inRangeCount);
                     targetBall = balls[randomPick];
                     chargeDir = targetBall.transform.position - transform.position;
+                    chargeDir = new Vector3(chargeDir.x,0,chargeDir.z);
                     switchState("getready");
                 }
                 
 
                 break;
 
-            case "getready": if (timer > 50) switchState("charge"); break;
+            case "getready": if (timer > 50)
+                {
+                    switchState("charge");
+                    transform.LookAt(targetBall.transform.position, Vector3.up);
+                }
+                break;
 
             case "charge":
 
