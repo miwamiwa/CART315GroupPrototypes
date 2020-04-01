@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Dog Factory",
+"productVersion": "0.1",
+"dataUrl": "machin.data.unityweb",
+"wasmCodeUrl": "machin.wasm.code.unityweb",
+"wasmFrameworkUrl": "machin.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.3.0f6"
+}
