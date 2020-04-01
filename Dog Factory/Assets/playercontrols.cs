@@ -17,7 +17,7 @@ public class playercontrols : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown("p"))
         {
             if (Time.time > kickCoolDown)
             {

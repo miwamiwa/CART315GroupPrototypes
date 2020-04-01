@@ -94,8 +94,15 @@ public class doggoscript : MonoBehaviour
                         {
                             if (i != blindEye || balls[i].GetComponent<Rigidbody>().velocity.magnitude > 1f)
                             {
-                                ballInRange[i] = true;
-                                inRangeCount++;
+                                if (
+                                    gameObject.GetComponent<MeshRenderer>().material.name 
+                                    == balls[i].GetComponent<MeshRenderer>().material.name
+                                    )
+                                {
+                                    ballInRange[i] = true;
+                                    inRangeCount++;
+                                }
+                                
                             }
 
                         }
@@ -172,7 +179,14 @@ public class doggoscript : MonoBehaviour
         {
             if (collision.gameObject.tag == "Ball")
             {
-                switchState("wait");
+                if (
+                     gameObject.GetComponent<MeshRenderer>().material.name
+                     == collision.gameObject.GetComponent<MeshRenderer>().material.name
+                   )
+                {
+                    switchState("wait");
+                }
+                   
             }
 
             if (collision.gameObject.tag == "Peppe")
