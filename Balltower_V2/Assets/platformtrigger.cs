@@ -26,16 +26,27 @@ public class platformtrigger : MonoBehaviour
     public float barkIntervalRange = 3f;
     AudioSource audio;
 
+
+    float nextMove = 1f;
+    float stopTime = 1.5f;
+    float timeBetweenMoves = 1f;
+    float maxMove = 1f;
+    Vector3 moveBearing;
+
     bool callTriggered = false;
     float barkResetTime = 0f;
     bool barked = false;
 
     public int roundsUntilBallReset = 5;
+
+    AudioSource playerAudio;
     // Start is called before the first frame update
     void Start()
     {
         // GameObject[] triggers = GameObject.FindGameObjectsWithTag("arrowtrigger");
         audio = GetComponent<AudioSource>();
+        playerAudio = GameObject.Find("ThirdPersonController_LITE").GetComponent<AudioSource>();
+        playerAudio.volume = 0.7f;
         triggerMoreArrows();
 
     }
@@ -43,16 +54,32 @@ public class platformtrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float time = Time.time;
 
-        if( Input.GetKeyDown("q") && !callTriggered )
+        if(time > nextMove)
+        {
+            moveBearing = new Vector3(Random.Range(-maxMove, maxMove), 0f, Random.Range(-maxMove, maxMove)).normalized;
+            nextMove = time + timeBetweenMoves;
+            stopTime = time + timeBetweenMoves / 2;
+            transform.rotation = Quaternion.LookRotation(moveBearing);
+        }
+        else if(time < stopTime)
+        {
+            Vector3 pos = gameObject.transform.position;
+            gameObject.transform.position = pos + moveBearing / 10f;
+        }
+
+        if ( Input.GetKeyDown("q") && !callTriggered )
         {
             // trigger whistle here
+            playerAudio.pitch = Random.Range(0.8f, 1.2f);
+            playerAudio.Play();
             callTriggered = true;
-            barkTime = Time.time + Random.Range(minBarkInterval, minBarkInterval + barkIntervalRange);
+            barkTime = time + Random.Range(minBarkInterval, minBarkInterval + barkIntervalRange);
             barkResetTime = barkTime + 0.5f;
         }
 
-        if (Time.time > barkTime &&callTriggered )
+        if (time > barkTime &&callTriggered )
         {
             if (!barked)
             {
@@ -62,7 +89,7 @@ public class platformtrigger : MonoBehaviour
                 barked = true;
             }
 
-            if (Time.time > barkResetTime)
+            if (time > barkResetTime)
             {
                 callTriggered = false;
                 barked = false;
@@ -72,7 +99,7 @@ public class platformtrigger : MonoBehaviour
 
         if (resetCollision)
         {
-            if (Time.time > resetTime)
+            if (time > resetTime)
             {
                 resetCollision = false;
             }
@@ -110,7 +137,7 @@ public class platformtrigger : MonoBehaviour
 
             // disable collision for a second
             resetCollision = true;
-            resetTime = Time.time + 1f;
+            resetTime = Time.time + 3f;
 
             // reset arrow triggers
             GameObject[] triggers = GameObject.FindGameObjectsWithTag("arrowtrigger");
