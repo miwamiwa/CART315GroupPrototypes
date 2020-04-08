@@ -19,7 +19,7 @@ public class BallSpawner : MonoBehaviour
             foreach (Transform transform in ballTransform)
             {
 
-                GameObject newBall = Instantiate(ball, transform.position + new Vector3(0,-i*2,0), Quaternion.identity);
+                GameObject newBall = Instantiate(ball, transform.position + new Vector3(0,i*2,0), Quaternion.identity);
                 newBall.GetComponent<moreballs>().canSpawn = false;
                 Renderer renderer = newBall.GetComponent<Renderer>();
                 Rigidbody rigidbody = newBall.GetComponent<Rigidbody>();
