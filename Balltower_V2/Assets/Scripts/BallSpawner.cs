@@ -8,18 +8,25 @@ public class BallSpawner : MonoBehaviour
     public List<Transform> ballTransform = null;
     public float maxVelocity = 3f;
     public Material mat = null;
+    int level = 1;
 
     public void SpawnBalls(Color color)
     {
-        foreach (Transform transform in ballTransform)
-        {
+        level++;
 
-            GameObject newBall = Instantiate(ball, transform.position, Quaternion.identity);
-            newBall.GetComponent<moreballs>().canSpawn = false;
-            Renderer renderer = newBall.GetComponent<Renderer>();
-            Rigidbody rigidbody = newBall.GetComponent<Rigidbody>();
-            rigidbody.velocity = new Vector3(Random.Range(0f, maxVelocity), Random.Range(0f, maxVelocity), Random.Range(0f, maxVelocity));
-            renderer.material = mat;
+        for(int i=0; i<level*2; i++)
+        {
+            foreach (Transform transform in ballTransform)
+            {
+
+                GameObject newBall = Instantiate(ball, transform.position + new Vector3(0,-i*2,0), Quaternion.identity);
+                newBall.GetComponent<moreballs>().canSpawn = false;
+                Renderer renderer = newBall.GetComponent<Renderer>();
+                Rigidbody rigidbody = newBall.GetComponent<Rigidbody>();
+                rigidbody.velocity = new Vector3(Random.Range(0f, maxVelocity), Random.Range(0f, maxVelocity), Random.Range(0f, maxVelocity));
+                renderer.material = mat;
+            }
         }
+        
     }
 }

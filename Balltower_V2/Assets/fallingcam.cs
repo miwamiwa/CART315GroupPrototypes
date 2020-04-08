@@ -72,6 +72,7 @@ public class fallingcam : MonoBehaviour
     {
         if (collision.gameObject.name == "Floor")
         {
+            
             // reset camera upon hitting the ground
             GameObject.Find("Main Camera").GetComponent<smoothefollow>().movementTime = 0.24f;
             falling = false;

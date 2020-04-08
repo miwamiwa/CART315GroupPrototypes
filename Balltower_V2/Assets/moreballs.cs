@@ -8,19 +8,30 @@ public class moreballs : MonoBehaviour
     // Start is called before the first frame update
     public bool canSpawn = false;
     public Material mat;
+    AudioSource audio;
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     public void OnCollisionEnter(Collision collision)
     {
+        if (
+            !audio.isPlaying
+            //&&collision.gameObject.name!="Floor"
+            )
+        {
+            Debug.Log(collision.impactForceSum.magnitude);
+            audio.volume = collision.impactForceSum.magnitude / 30f;
+            audio.Play();
+        }
+
         if (collision.gameObject.name == "ThirdPersonController_LITE" && canSpawn)
         {
             GameObject theball = GameObject.Instantiate(newball, gameObject.transform.position, Quaternion.identity);
