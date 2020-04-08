@@ -16,27 +16,56 @@ public class platformtrigger : MonoBehaviour
     public float displayTime = 3f;
     bool displayed = false;
     Quaternion beamrot;
+    int levelCount = 0;
+
+    bool resetCollision = false;
+    float resetTime = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        arrow = GameObject.Find("arrow");
-     //   arrow.SetActive(false);
-        
+       // GameObject[] triggers = GameObject.FindGameObjectsWithTag("arrowtrigger");
+
+        for (int i = 0; i < numberOfArrowTriggers; i++)
+        {
+            GameObject newArrowTrigger = Instantiate(ArrowTrigger, transform.position, Quaternion.identity);
+            Vector3 bounds = gameObject.GetComponent<Collider>().bounds.size;
+            Vector3 pos = GameObject.Find("middlepoint").transform.position;
+            Vector2 randpos = Random.insideUnitCircle * bounds.z * .3f;
+
+            newArrowTrigger.transform.position = new Vector3(
+                pos.x + randpos.x,
+                pos.y + bounds.y + 2f,
+                pos.z + randpos.y
+                );
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (resetCollision)
+        {
+            if (Time.time > resetTime)
+            {
+                resetCollision = false;
+            }
+        }
      //   arrow.transform.rotation = beamrot;
 
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "ThirdPersonController_LITE")
+        if (collision.gameObject.name == "ThirdPersonController_LITE"&&!resetCollision)
         {
-            for(int i=0; i< numberOfArrowTriggers; i++)
+            resetCollision = true;
+            resetTime = Time.time + 1f;
+
+            GameObject[] triggers = GameObject.FindGameObjectsWithTag("arrowtrigger");
+
+            for(int i=0; i< numberOfArrowTriggers - triggers.Length; i++)
             {
                 GameObject newArrowTrigger = Instantiate(ArrowTrigger, transform.position, Quaternion.identity);
                 Vector3 bounds = gameObject.GetComponent<Collider>().bounds.size;
@@ -49,7 +78,20 @@ public class platformtrigger : MonoBehaviour
                     pos.z + randpos.y
                     );
             }
-            
+
+            levelCount++;
+            Debug.Log(levelCount);
+            if (levelCount % 2 == 0)
+            {
+                // destroy balls
+                GameObject[] balls = GameObject.FindGameObjectsWithTag("ball");
+
+                for (int i = 0; i < balls.Length; i++)
+                {
+                    Destroy(balls[i]);
+                }
+            }
+
 
             // platform fall.
             targetplatform

@@ -6,6 +6,7 @@ public class fallingscript : MonoBehaviour
 {
     public bool falling = false;
     int fallcount = 0;
+    
     GameObject trig;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,9 @@ public class fallingscript : MonoBehaviour
             if (fallcount == 0)
             {
                 
+                
+
+
                 GameObject.Find("ThirdPersonController_LITE").GetComponent<fallingcam>().falling = true; ;
                 trig.transform.rotation = Random.rotation;
                 Rigidbody rigidbody = trig.GetComponent<Rigidbody>();
