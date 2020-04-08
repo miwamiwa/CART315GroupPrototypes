@@ -11,6 +11,9 @@ public class fallingcam : MonoBehaviour
     public float kickCoolDownDuration = 1f;
     public GameObject projectile;
     public Animator anim;
+    public bool arrowActivated = false;
+    float arrowOff = 0f;
+    public float arrowTime = 5f; // time during which arrow is visible
   
     private void Start()
     {
@@ -23,9 +26,21 @@ public class fallingcam : MonoBehaviour
         // speed up camera follow during fall
         if(falling)
             GameObject.Find("Main Camera").GetComponent<smoothefollow>().movementTime = 0.001f;
-        // move arrow
-        arrow.transform.LookAt(trigger.transform, -arrow.transform.up);
-        arrow.transform.Rotate(new Vector3(-90, 0, 0));
+
+        if (arrowActivated)
+        {
+           // Debug.Log("yo");
+            // move arrow
+            arrow.transform.LookAt(trigger.transform, -arrow.transform.up);
+            arrow.transform.Rotate(new Vector3(-90, 0, 0));
+
+            if (Time.time > arrowOff)
+            {
+                arrow.GetComponent<MeshRenderer>().enabled = false;
+                arrowActivated = false;
+            }
+        }
+       
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -44,6 +59,13 @@ public class fallingcam : MonoBehaviour
             }
         }
        
+    }
+
+    public void triggerArrow()
+    {
+        arrowActivated = true;
+        arrowOff = Time.time + arrowTime;
+        arrow.GetComponent<MeshRenderer>().enabled = true;
     }
 
     private void OnCollisionEnter(Collision collision)
