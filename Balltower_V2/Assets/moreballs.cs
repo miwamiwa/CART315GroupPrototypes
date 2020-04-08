@@ -27,7 +27,7 @@ public class moreballs : MonoBehaviour
             //&&collision.gameObject.name!="Floor"
             )
         {
-            Debug.Log(collision.impactForceSum.magnitude);
+          //  Debug.Log(collision.impactForceSum.magnitude);
             audio.volume = collision.impactForceSum.magnitude / 30f;
             audio.Play();
         }
