@@ -77,7 +77,7 @@ public class platformtrigger : MonoBehaviour
             gameObject.transform.position = pos + moveBearing / 10f;
         }
 
-        if ( Input.GetKeyDown("q") && !callTriggered )
+        if ( ( Input.GetKeyDown("q") || Input.GetKeyDown("e" ) )&& !callTriggered )
         {
             // trigger whistle here
             playerAudio.pitch = Random.Range(0.8f, 1.2f);
@@ -177,6 +177,7 @@ public class platformtrigger : MonoBehaviour
                 .falling = true;
                 Renderer renderer = GetComponent<Renderer>();
 
+            //add balls
             spawner.SpawnBalls(renderer.material.color);
         }
     }

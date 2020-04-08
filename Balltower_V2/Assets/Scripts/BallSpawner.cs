@@ -8,13 +8,15 @@ public class BallSpawner : MonoBehaviour
     public List<Transform> ballTransform = null;
     public float maxVelocity = 3f;
     public Material mat = null;
-    int level = 1;
+    float level = 1;
 
     public void SpawnBalls(Color color)
     {
+        //level+=0.2f;
         level++;
-
-        for(int i=0; i<level; i++)
+        //   float levelInt = Mathf.Round(level);
+        float levelInt = level;
+        for(int i=0; i<levelInt; i++)
         {
             foreach (Transform transform in ballTransform)
             {
