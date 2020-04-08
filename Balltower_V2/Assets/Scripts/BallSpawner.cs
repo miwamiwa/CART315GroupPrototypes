@@ -14,7 +14,7 @@ public class BallSpawner : MonoBehaviour
     {
         level++;
 
-        for(int i=0; i<level*2; i++)
+        for(int i=0; i<level; i++)
         {
             foreach (Transform transform in ballTransform)
             {
