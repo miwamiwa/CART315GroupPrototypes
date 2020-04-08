@@ -58,7 +58,15 @@ public class platformtrigger : MonoBehaviour
 
         if(time > nextMove)
         {
+            Vector3 pos = gameObject.transform.position;
+
             moveBearing = new Vector3(Random.Range(-maxMove, maxMove), 0f, Random.Range(-maxMove, maxMove)).normalized;
+            Vector3 newpos = pos + moveBearing;
+            while( newpos.x > 17 || newpos.z > 15 || newpos.x < -16 || newpos.z < -18)
+            {
+                moveBearing = new Vector3(Random.Range(-maxMove, maxMove), 0f, Random.Range(-maxMove, maxMove)).normalized;
+                newpos = pos + moveBearing;
+            }
             nextMove = time + timeBetweenMoves;
             stopTime = time + timeBetweenMoves / 2;
             transform.rotation = Quaternion.LookRotation(moveBearing);
