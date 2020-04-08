@@ -12,10 +12,10 @@ public class BallSpawner : MonoBehaviour
 
     public void SpawnBalls(Color color)
     {
-        //level+=0.2f;
-        level++;
-        //   float levelInt = Mathf.Round(level);
-        float levelInt = level;
+        level+=0.5f;
+        //level++;
+         float levelInt = Mathf.Round(level);
+       // float levelInt = level;
         for(int i=0; i<levelInt; i++)
         {
             foreach (Transform transform in ballTransform)
