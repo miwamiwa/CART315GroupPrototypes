@@ -39,7 +39,18 @@ public class moreballs : MonoBehaviour
             audio.volume = collision.impactForceSum.magnitude / 30f;
             audio.Play();
         }
+        if (collision.gameObject.name=="Trigger"&&gameObject.GetComponent<Rigidbody>().velocity.magnitude > 20f)
+        {
+            GameObject dog = GameObject.Find("Trigger");
 
+            AudioSource dogAudio = dog.GetComponent<AudioSource>();
+            dogAudio.clip = dog.GetComponent<platformtrigger>().yip;
+            dogAudio.pitch = 1f;
+            dogAudio.volume = 0.5f;
+            dogAudio.Play();
+
+
+        }
         if (collision.gameObject.name == "ThirdPersonController_LITE"  )
         {
             if (!hasSpawned)

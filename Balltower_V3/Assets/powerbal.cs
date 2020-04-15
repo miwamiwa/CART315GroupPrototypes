@@ -16,6 +16,22 @@ public class powerbal : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Trigger" )
+        {
+            GameObject dog = GameObject.Find("Trigger");
+
+            AudioSource dogAudio = dog.GetComponent<AudioSource>();
+            dogAudio.clip = dog.GetComponent<platformtrigger>().yip;
+            dogAudio.volume = 0.5f;
+            dogAudio.pitch = 1f;
+            dogAudio.Play();
+
+
+        }
+    }
+
     private void OnCollisionStay(Collision collision)
     {
         Destroy(gameObject);

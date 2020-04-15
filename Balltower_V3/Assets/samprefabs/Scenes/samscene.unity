@@ -6635,6 +6635,16 @@ PrefabInstance:
       propertyPath: barkIntervalRange
       value: 0.56
       objectReference: {fileID: 0}
+    - target: {fileID: 5689139019579626852, guid: b8bc24c47b40eca49b8c84db9a3c1666,
+        type: 3}
+      propertyPath: bark
+      value: 
+      objectReference: {fileID: 8300000, guid: 3cdac232f6c80bd46820cd2c6475ab58, type: 3}
+    - target: {fileID: 5689139019579626852, guid: b8bc24c47b40eca49b8c84db9a3c1666,
+        type: 3}
+      propertyPath: yip
+      value: 
+      objectReference: {fileID: 8300000, guid: f179245977aa3934daf7b8b48472056c, type: 3}
     - target: {fileID: 5689139019579626855, guid: b8bc24c47b40eca49b8c84db9a3c1666,
         type: 3}
       propertyPath: m_Name

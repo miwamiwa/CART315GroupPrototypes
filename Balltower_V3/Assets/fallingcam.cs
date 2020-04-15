@@ -57,7 +57,7 @@ public class fallingcam : MonoBehaviour
         }
        
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown("o"))
         {
             if (Time.time > kickCoolDown)
             {
@@ -71,6 +71,7 @@ public class fallingcam : MonoBehaviour
                 kickCoolDown = Time.time + kickCoolDownDuration;
                
                 anim.Play("t-pose");
+                
             }
         }
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class platformtrigger : MonoBehaviour
 {
-    AudioClip bark;
-    AudioClip yip;
+    public AudioClip bark;
+    public AudioClip yip;
     public GameObject targetplatform;
     public BallSpawner spawner = null;
     public GameObject arrow;
@@ -26,7 +26,7 @@ public class platformtrigger : MonoBehaviour
     float barkTime = 0.8f;
     public float minBarkInterval = 1f;
     public float barkIntervalRange = 3f;
-    AudioSource audio;
+    public AudioSource audio;
 
 
     float nextMove = 1f;
@@ -34,6 +34,8 @@ public class platformtrigger : MonoBehaviour
     float timeBetweenMoves = 1f;
     float maxMove = 1f;
     Vector3 moveBearing;
+
+    public bool flying = false;
 
     bool callTriggered = false;
     float barkResetTime = 0f;
@@ -56,6 +58,7 @@ public class platformtrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         float time = Time.time;
 
         if(time > nextMove)
@@ -79,7 +82,7 @@ public class platformtrigger : MonoBehaviour
             gameObject.transform.position = pos + moveBearing / 10f;
         }
 
-        if ( ( Input.GetKeyDown("q") || Input.GetKeyDown("e" ) )&& !callTriggered )
+        if ( ( Input.GetKeyDown("p" ) )&& !callTriggered )
         {
             // trigger whistle here
             playerAudio.pitch = Random.Range(0.8f, 1.2f);
@@ -95,7 +98,7 @@ public class platformtrigger : MonoBehaviour
             {
                 // trigger bark 
                 audio.pitch = 1f;
-                audio.clip = "bark";
+                audio.clip = bark;
                 audio.Play();
                 barked = true;
             }
@@ -138,11 +141,15 @@ public class platformtrigger : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+
+        
         if (collision.gameObject.name == "ThirdPersonController_LITE"&&!resetCollision)
         {
             // trigger audio 
-            audio.pitch = 0.5f;
+            
             audio.Stop();
+            audio.clip = bark;
+            audio.pitch = 0.5f;
             audio.Play();
             barkTime = Time.time + Random.Range(minBarkInterval/2, minBarkInterval/2 + barkIntervalRange/2);
 
@@ -183,5 +190,6 @@ public class platformtrigger : MonoBehaviour
             //add balls
             spawner.SpawnBalls(renderer.material.color);
         }
+      //  else flying = false;
     }
 }

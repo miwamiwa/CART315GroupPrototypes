@@ -49,6 +49,7 @@ public class fallingscript : MonoBehaviour
                     pos.z +  randpos.y
                     ) ;
                 falling = false;
+                GameObject.Find("Trigger").GetComponent<platformtrigger>().flying = true;
                 fallcount = 0;
             }
         }
