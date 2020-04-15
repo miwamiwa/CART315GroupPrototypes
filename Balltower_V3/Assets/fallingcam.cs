@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class fallingcam : MonoBehaviour
 {
@@ -33,7 +35,7 @@ public class fallingcam : MonoBehaviour
                 || Input.GetKeyDown("d")
                 || Input.GetKeyDown("s")
                 || Input.GetKeyDown("w")
-                || Input.GetKeyDown(" ")
+                || Input.GetKeyDown(KeyCode.Space)
                 ) gameObject.GetComponent<Rigidbody>().isKinematic = false;
         }
         // speed up camera follow during fall
@@ -70,6 +72,11 @@ public class fallingcam : MonoBehaviour
                
                 anim.Play("t-pose");
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("intro");
         }
        
     }
