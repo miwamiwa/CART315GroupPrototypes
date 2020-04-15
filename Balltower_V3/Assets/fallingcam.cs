@@ -27,11 +27,14 @@ public class fallingcam : MonoBehaviour
 
         if (isOnBall)
         {
-            if (Input.GetKeyDown("a")) gameObject.transform.Translate(new Vector3(-1f, 0f, 0f), Space.World);
-            else if (Input.GetKeyDown("d")) gameObject.transform.Translate(new Vector3(1f, 0f, 0f), Space.World);
 
-            if (Input.GetKeyDown("s")) gameObject.transform.Translate(new Vector3(0f, 0f, -1f), Space.World);
-            else if (Input.GetKeyDown("w")) gameObject.transform.Translate(new Vector3(0f, 0f, 1f), Space.World);
+            if (
+                Input.GetKeyDown("a")
+                || Input.GetKeyDown("d")
+                || Input.GetKeyDown("s")
+                || Input.GetKeyDown("w")
+                || Input.GetKeyDown(" ")
+                ) gameObject.GetComponent<Rigidbody>().isKinematic = false;
         }
         // speed up camera follow during fall
         if(falling)

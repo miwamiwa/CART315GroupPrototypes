@@ -8,6 +8,7 @@ public class moreballs : MonoBehaviour
     // Start is called before the first frame update
     public bool canSpawn = false;
     public Material mat;
+    bool hasSpawned = false;
     AudioSource audio;
     void Start()
     {
@@ -27,6 +28,13 @@ public class moreballs : MonoBehaviour
             //&&collision.gameObject.name!="Floor"
             )
         {
+            Vector3 distToPlayer = gameObject.transform.position - GameObject.Find("ThirdPersonController_LITE").transform.position;
+            int level = GameObject.Find("Trigger").GetComponent<platformtrigger>().levelCount;
+
+            int treshold = 20 - level;
+            if (treshold < 1) treshold = 1;
+
+            if ( distToPlayer.magnitude < treshold )
             //  Debug.Log(collision.impactForceSum.magnitude);
             audio.volume = collision.impactForceSum.magnitude / 30f;
             audio.Play();
@@ -34,12 +42,13 @@ public class moreballs : MonoBehaviour
 
         if (collision.gameObject.name == "ThirdPersonController_LITE"  )
         {
-            if (canSpawn)
+            if (!hasSpawned)
             {
                 GameObject theball = GameObject.Instantiate(newball, gameObject.transform.position, Quaternion.identity);
                 Vector2 randpos = Random.insideUnitCircle * 1f;
                 theball.transform.position = GameObject.Find("spawnpoint").transform.position;
                 theball.GetComponent<moreballs>().canSpawn = false;
+                hasSpawned = true;
                 theball.GetComponent<Renderer>().material = mat;
             }
         

@@ -16,7 +16,7 @@ public class platformtrigger : MonoBehaviour
     public float displayTime = 3f;
     bool displayed = false;
     Quaternion beamrot;
-    int levelCount = 0;
+    public int levelCount = 0;
 
     bool resetCollision = false;
     float resetTime = 0f;
