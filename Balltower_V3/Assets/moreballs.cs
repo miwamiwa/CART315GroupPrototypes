@@ -39,7 +39,7 @@ public class moreballs : MonoBehaviour
             audio.volume = collision.impactForceSum.magnitude / 30f;
             audio.Play();
         }
-        if (collision.gameObject.name=="Trigger"&&gameObject.GetComponent<Rigidbody>().velocity.magnitude > 20f)
+        if (collision.gameObject.name=="Trigger"&&gameObject.GetComponent<Rigidbody>().velocity.magnitude > 40f)
         {
             GameObject dog = GameObject.Find("Trigger");
 
