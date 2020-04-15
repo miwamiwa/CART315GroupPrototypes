@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class platformtrigger : MonoBehaviour
 {
+    AudioClip bark;
+    AudioClip yip;
     public GameObject targetplatform;
     public BallSpawner spawner = null;
     public GameObject arrow;
@@ -93,6 +95,7 @@ public class platformtrigger : MonoBehaviour
             {
                 // trigger bark 
                 audio.pitch = 1f;
+                audio.clip = "bark";
                 audio.Play();
                 barked = true;
             }
