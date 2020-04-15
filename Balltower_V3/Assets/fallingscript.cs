@@ -43,6 +43,27 @@ public class fallingscript : MonoBehaviour
                 Vector3 pos = GameObject.Find("middlepoint").transform.position;
                 Vector2 randpos = Random.insideUnitCircle * bounds.z*.3f;
                 //Debug.Log("floor level " + gameObject.transform.position.y);
+                Vector3 newPos = new Vector3(
+                    pos.x + randpos.x,
+                    pos.y + bounds.y + 2f,
+                    pos.z + randpos.y
+                    );
+
+                Vector3 playerPos = GameObject.Find("ThirdPersonController_LITE").transform.position;
+                Vector3 dist = playerPos - newPos;
+
+                while( dist.magnitude < 10f)
+                {
+                    randpos = Random.insideUnitCircle * bounds.z * .3f;
+                    //Debug.Log("floor level " + gameObject.transform.position.y);
+                    newPos = new Vector3(
+                        pos.x + randpos.x,
+                        pos.y + bounds.y + 2f,
+                        pos.z + randpos.y
+                        );
+                    dist = playerPos - newPos;
+                }
+
                 trig.transform.position = new Vector3(
                     pos.x + randpos.x,
                     pos.y + bounds.y+2f,

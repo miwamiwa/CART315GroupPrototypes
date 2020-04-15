@@ -124,7 +124,7 @@ public class platformtrigger : MonoBehaviour
 
     void triggerMoreArrows()
     {
-        for (int i = 0; i < numberOfArrowTriggers; i++)
+        for (int i = 0; i < numberOfArrowTriggers+levelCount; i++)
         {
             GameObject newArrowTrigger = Instantiate(ArrowTrigger, transform.position, Quaternion.identity);
             Vector3 bounds = gameObject.GetComponent<Collider>().bounds.size;
