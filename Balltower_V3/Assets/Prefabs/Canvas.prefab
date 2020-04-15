@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -10, y: -10}
-  m_SizeDelta: {x: 210, y: 100}
+  m_SizeDelta: {x: 159.3, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &7156488389900182960
 CanvasRenderer:
@@ -65,26 +65,28 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 26226cf3c4948e845bf6c4cbce0dc096, type: 3}
+    m_Font: {fileID: 12800000, guid: cf7b04bb04b500d47915b1632b4ca19a, type: 3}
     m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 82
-    m_Alignment: 2
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
-    m_LineSpacing: 1.39
-  m_Text: 'Q or E to Call Doggo
+    m_LineSpacing: 1.3
+  m_Text: '[WASD] to move
 
-    Left-click to Kick
+    [P] to Call Doggo
 
-    Space to Jump
+    [O] to Power Move
 
-    WASD
-    to move'
+    [Space]
+    to Jump
+
+    [Escape] to Quit'
 --- !u!114 &7156488389900182962
 MonoBehaviour:
   m_ObjectHideFlags: 0
