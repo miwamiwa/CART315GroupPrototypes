@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/samprefabs/Scenes/intro.unity
+    guid: ae60b113116a0f742ab6d469ce00200c
+  - enabled: 1
+    path: Assets/samprefabs/Scenes/samscene.unity
+    guid: 23a43e99910e95640b507ec7ad8b2d45
   m_configObjects: {}
