@@ -27,18 +27,41 @@ public class moreballs : MonoBehaviour
             //&&collision.gameObject.name!="Floor"
             )
         {
-          //  Debug.Log(collision.impactForceSum.magnitude);
+            //  Debug.Log(collision.impactForceSum.magnitude);
             audio.volume = collision.impactForceSum.magnitude / 30f;
             audio.Play();
         }
 
-        if (collision.gameObject.name == "ThirdPersonController_LITE" && canSpawn)
+        if (collision.gameObject.name == "ThirdPersonController_LITE"  )
         {
-            GameObject theball = GameObject.Instantiate(newball, gameObject.transform.position, Quaternion.identity);
-            Vector2 randpos = Random.insideUnitCircle * 1f;
-            theball.transform.position = GameObject.Find("spawnpoint").transform.position;
-            theball.GetComponent<moreballs>().canSpawn = false;
-            theball.GetComponent<Renderer>().material = mat;
+            if (canSpawn)
+            {
+                GameObject theball = GameObject.Instantiate(newball, gameObject.transform.position, Quaternion.identity);
+                Vector2 randpos = Random.insideUnitCircle * 1f;
+                theball.transform.position = GameObject.Find("spawnpoint").transform.position;
+                theball.GetComponent<moreballs>().canSpawn = false;
+                theball.GetComponent<Renderer>().material = mat;
+            }
+        
+
+            if (collision.gameObject.transform.position.y > gameObject.transform.position.y)
+            {
+                collision.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                collision.gameObject.GetComponent<fallingcam>().isOnBall = true;
+            }
         }
+    }
+
+    public void OnCollisionExit(Collision collision)
+    {
+        
+
+        if (collision.gameObject.name == "ThirdPersonController_LITE")
+        {
+           
+                collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            collision.gameObject.GetComponent<fallingcam>().isOnBall = false;
+            }
+        
     }
 }

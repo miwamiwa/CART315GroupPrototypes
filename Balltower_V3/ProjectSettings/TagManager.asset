@@ -6,6 +6,7 @@ TagManager:
   tags:
   - floor
   - ball
+  - arrowtrigger
   layers:
   - Default
   - TransparentFX
@@ -16,10 +17,10 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
+  - ball1
+  - ball2
+  - player
+  - walls
   - 
   - 
   - 

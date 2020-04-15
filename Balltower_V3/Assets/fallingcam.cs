@@ -13,6 +13,7 @@ public class fallingcam : MonoBehaviour
     public Animator anim;
     public bool arrowActivated = false;
     float arrowOff = 0f;
+    public bool isOnBall = false;
     public float arrowTime = 5f; // time during which arrow is visible
   
     private void Start()
@@ -23,6 +24,15 @@ public class fallingcam : MonoBehaviour
 
     void Update()
     {
+
+        if (isOnBall)
+        {
+            if (Input.GetKeyDown("a")) gameObject.transform.Translate(new Vector3(-1f, 0f, 0f), Space.World);
+            else if (Input.GetKeyDown("d")) gameObject.transform.Translate(new Vector3(1f, 0f, 0f), Space.World);
+
+            if (Input.GetKeyDown("s")) gameObject.transform.Translate(new Vector3(0f, 0f, -1f), Space.World);
+            else if (Input.GetKeyDown("w")) gameObject.transform.Translate(new Vector3(0f, 0f, 1f), Space.World);
+        }
         // speed up camera follow during fall
         if(falling)
             GameObject.Find("Main Camera").GetComponent<smoothefollow>().movementTime = 0.001f;
