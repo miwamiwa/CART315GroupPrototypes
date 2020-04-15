@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UiTimer : MonoBehaviour
 {
-    public float time = 30f; 
+    public float time = 60f; 
 
     void Start()
     {
