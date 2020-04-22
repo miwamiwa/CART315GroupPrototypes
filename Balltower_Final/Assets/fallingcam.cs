@@ -18,7 +18,7 @@ public class fallingcam : MonoBehaviour
     public bool isOnBall = false;
     public float arrowTime = 5f; // time during which arrow is visible
     public Timer tim;
-    public float bonus = 5;
+    public static float bonus = 5;
   
     private void Start()
     {

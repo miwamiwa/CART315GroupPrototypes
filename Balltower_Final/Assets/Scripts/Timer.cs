@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
     
     private void SetFillAmount()
     {
-        loadingSprite.fillAmount = timeRemaining / timerTotal;
+        loadingSprite.fillAmount = timeRemaining / (timerTotal + (CurrentLvl.currentLvl*fallingcam.bonus));
         countdownText.text = Mathf.Round(timeRemaining).ToString();
         countdownTextShadow.text = Mathf.Round(timeRemaining).ToString();
     }
