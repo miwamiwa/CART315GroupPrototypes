@@ -7,7 +7,9 @@ public class powerbal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        int level = GameObject.Find("Trigger").GetComponent<platformtrigger>().levelCount;
+        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+        rb.mass += level * 5;
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class powerbal : MonoBehaviour
 
             AudioSource dogAudio = dog.GetComponent<AudioSource>();
             dogAudio.clip = dog.GetComponent<platformtrigger>().yip;
-            dogAudio.volume = 0.5f;
+            dogAudio.volume = 0.2f;
             dogAudio.pitch = 1f;
             dogAudio.Play();
 
