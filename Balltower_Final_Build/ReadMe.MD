@@ -1,8 +1,13 @@
 Ball Tower - Final Build
+============================================================
+In this game you must find your dog who is running loose on a floor full of balls​​. 
+Jump, whistle, and blast balls out of the way to locate your favorite fella before time runs out! 
+You can also collect arrow crates that will temporarily point you towards your doggo. 
+Each time you reach your dog, the platform falls and a new level start with more balls hiding your dog from view. Enjoy!​
 
-In this game you must find your dog who is running loose on a floor full of balls​​. Jump, whistle, and blast balls out of the way to locate your favorite fella before time runs out! You can also collect arrow crates that will temporarily point you towards your doggo. Each time you reach your dog, the platform falls and a new level start with more balls hiding your dog from view. Enjoy!​
 CONTROLS: [WASD] to move, [SPACE] to jump, [P] to whistle, [O] to powermove.
-Developped by Melissa Lim and Samuel
+
+Developped by Melissa Lim and Samuel Paré-Chouinard
 
 CHANGES
 
@@ -14,14 +19,14 @@ In this final iteration of Ball Tower, we made four main changes:
 
 
 REFERENCES
-
-ASSETS
+-----------------------------------------------------------
+ASSETS:
 Character + Materials for Floor + Wall:
 Invector-3rdPersonController_LITE from the Asset Store
 Crate Texture from Luke.RUSTLTD
 https://opengameart.org/content/3-crate-textures-w-bump-normal
 Other Textures/Models were made by us
-FONTS
+FONTS:
 Controls & General Text:
 Fjalla One by Sorkin Type
 https://fonts.google.com/specimen/Fjalla+One?query=fja
