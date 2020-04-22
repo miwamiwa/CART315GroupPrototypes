@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class platformtrigger : MonoBehaviour
 {
@@ -168,6 +169,11 @@ public class platformtrigger : MonoBehaviour
 
             // update level count 
             levelCount++;
+
+            if (CurrentLvl.currentLvl > 30)
+            {
+                SceneManager.LoadScene("Good End");
+            }
 
 
             if (levelCount % roundsUntilBallReset == 0)

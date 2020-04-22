@@ -17,6 +17,8 @@ public class fallingcam : MonoBehaviour
     float arrowOff = 0f;
     public bool isOnBall = false;
     public float arrowTime = 5f; // time during which arrow is visible
+    public Timer tim;
+    public float bonus = 5;
   
     private void Start()
     {
@@ -44,7 +46,6 @@ public class fallingcam : MonoBehaviour
 
         if (arrowActivated)
         {
-           // Debug.Log("yo");
             // move arrow
             arrow.transform.LookAt(trigger.transform, -arrow.transform.up);
             arrow.transform.Rotate(new Vector3(-90, 0, 0));
@@ -93,10 +94,10 @@ public class fallingcam : MonoBehaviour
     {
         if (collision.gameObject.name == "Floor")
         {
-            
             // reset camera upon hitting the ground
             GameObject.Find("Main Camera").GetComponent<smoothefollow>().movementTime = 0.24f;
             falling = false;
+            tim.AddTime(CurrentLvl.currentLvl * bonus);
         }
     }
 }

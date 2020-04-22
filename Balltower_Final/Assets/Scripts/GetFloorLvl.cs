@@ -19,5 +19,6 @@ public class GetFloorLvl : MonoBehaviour
     {
         level = GameObject.Find("Trigger").GetComponent<platformtrigger>().levelCount;
         floor.text = "Level " + (level + 1);
+        CurrentLvl.currentLvl = level + 1;
     }
 }

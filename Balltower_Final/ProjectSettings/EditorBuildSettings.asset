@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/samprefabs/Scenes/samscene.unity
     guid: 23a43e99910e95640b507ec7ad8b2d45
+  - enabled: 1
+    path: Assets/samprefabs/Scenes/Bad End.unity
+    guid: 20bee16bf80faea42af701e61566975d
+  - enabled: 1
+    path: Assets/samprefabs/Scenes/Good End.unity
+    guid: 3a47c98458b3ab04293917a849c17d19
   m_configObjects: {}

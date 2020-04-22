@@ -361,10 +361,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 435076276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0e6ebb740f614f498c0e866bec57735, type: 3}
+  m_Script: {fileID: 11500000, guid: e485d0ba448bea74381f8501b668d3d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playButton: {fileID: 1739601500}
+  menuButton: {fileID: 1739601500}
 --- !u!1 &478408264
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 478408267}
   - component: {fileID: 478408266}
   m_Layer: 5
-  m_Name: Controls
+  m_Name: WinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -432,17 +432,18 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
-    m_LineSpacing: -1.79
-  m_Text: '[Escape] to Quit
+    m_LineSpacing: 1.79
+  m_Text: 'You''ve reached the depths of the Balltower!!!
 
-    [P] to Call Doggo
+    You were able to catch
+    your doggo! Finally.
 
-    [O] to Power Move
+    Congratulations!
 
-    [Space]
-    to Jump
+    Doggo shouldn''t be running away
+    anymore.
 
-    [WASD] to move'
+    Unless...'
 --- !u!222 &478408267
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -585,7 +586,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Enter
+  m_Text: Back to Menu
 --- !u!222 &613710942
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &31561872 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 120345455, guid: b0ce3a842a7b2814e99b3ac4452c7501,
+    type: 3}
+  m_PrefabInstance: {fileID: 1982264912}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &151177890
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +728,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &907511312 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 146194477517444834, guid: b0ce3a842a7b2814e99b3ac4452c7501,
+    type: 3}
+  m_PrefabInstance: {fileID: 1982264912}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &939758599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1322,13 +1346,46 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1576917138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1633447333, guid: b0ce3a842a7b2814e99b3ac4452c7501,
+    type: 3}
+  m_PrefabInstance: {fileID: 1982264912}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1576917140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576917138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3224de14bb290474d851b5de2ccfb5d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingSprite: {fileID: 31561872}
+  countdownText: {fileID: 1576917141}
+  countdownTextShadow: {fileID: 907511312}
+--- !u!114 &1576917141 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1633447335, guid: b0ce3a842a7b2814e99b3ac4452c7501,
+    type: 3}
+  m_PrefabInstance: {fileID: 1982264912}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576917138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1585654754
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33570
+  m_Name: pb_Mesh39426
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5072,6 +5129,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 120345455, guid: b0ce3a842a7b2814e99b3ac4452c7501, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633447335, guid: b0ce3a842a7b2814e99b3ac4452c7501, type: 3}
+      propertyPath: m_Text
+      value: 00
+      objectReference: {fileID: 0}
+    - target: {fileID: 146194477517444834, guid: b0ce3a842a7b2814e99b3ac4452c7501,
+        type: 3}
+      propertyPath: m_Text
+      value: 00
+      objectReference: {fileID: 0}
     - target: {fileID: 7156488390760989369, guid: b0ce3a842a7b2814e99b3ac4452c7501,
         type: 3}
       propertyPath: m_Name
@@ -6590,6 +6660,11 @@ PrefabInstance:
       propertyPath: arrowTime
       value: 1.86
       objectReference: {fileID: 0}
+    - target: {fileID: 3031417817976614267, guid: 9402a6ddeb383b5438716aa84e635202,
+        type: 3}
+      propertyPath: tim
+      value: 
+      objectReference: {fileID: 1576917140}
     - target: {fileID: 3031417818662505585, guid: 9402a6ddeb383b5438716aa84e635202,
         type: 3}
       propertyPath: m_Layer
